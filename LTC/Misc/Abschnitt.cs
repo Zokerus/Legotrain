@@ -59,11 +59,14 @@ namespace LTC.Misc
 
         public void Belegen(Train _zug)
         {
-            label.Checked = true;
-            belegt = true;
-            zug = _zug;
-            main.SetAmpel(ampelID, false);
-            label.Text = "Abschnitt " + id.ToString() + "\nBelegt durch " + zug.ToString();
+            if (_zug != null)
+            {
+                label.Checked = true;
+                belegt = true;
+                zug = _zug;
+                main.SetAmpel(ampelID, false);
+                label.Text = "Abschnitt " + id.ToString() + "\nBelegt durch " + zug.ToString();
+            }
         }
 
         public void Freigeben()
